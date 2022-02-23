@@ -3,18 +3,17 @@ package com.faya992.lotr.presentation.quotes
 import android.app.Application
 import androidx.lifecycle.*
 import com.faya992.lotr.data.models.QuoteRemote
-import com.faya992.lotr.data.network.RetrofitFactory
 import com.faya992.lotr.data.room.QuotesDatabase
 import com.faya992.lotr.data.room.dao.QuotesListEntity
+import com.faya992.lotr.data.services.QuotesService
 import com.faya992.lotr.domain.repositories.QuotesRepository
 import com.faya992.lotr.domain.helpers.REPOSITORY
 import com.faya992.lotr.domain.helpers.TYPE_ROOM
 import kotlinx.coroutines.*
 
-class QuotesViewModel(application: Application) : AndroidViewModel(application) {
+class QuotesViewModel(application: Application, private val quotesService: QuotesService) : AndroidViewModel(application) {
 
     private val mContext = application
-    private val quotesService = RetrofitFactory().getQuotesService()
     private var job: Job? = null
     private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")

@@ -5,12 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faya992.lotr.R
 import com.faya992.lotr.data.models.MovieRemote
-import com.faya992.lotr.data.network.RetrofitFactory
 import com.faya992.lotr.data.services.MoviesService
 import kotlinx.coroutines.*
 
 
-class MovieDetailsViewModel : ViewModel() {
+class MovieDetailsViewModel (private val moviesService: MoviesService) : ViewModel() {
 
     private val _movieName: MutableLiveData<String> = MutableLiveData<String>().apply { value = "" }
     private val _release: MutableLiveData<String> = MutableLiveData<String>().apply { value = "" }
@@ -38,7 +37,6 @@ class MovieDetailsViewModel : ViewModel() {
     val moviesLoadError: LiveData<String?> = _moviesLoadError
     val loading: LiveData<Boolean> = _loading
 
-    private val moviesService = RetrofitFactory().getMoviesService()
     private var job: Job? = null
     private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")

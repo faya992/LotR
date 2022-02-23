@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faya992.lotr.R
 import com.faya992.lotr.data.models.BookRemote
-import com.faya992.lotr.data.network.RetrofitFactory
 import com.faya992.lotr.data.services.BooksService
 import kotlinx.coroutines.*
 
-class BookDetailsViewModel : ViewModel() {
+class BookDetailsViewModel (private val booksService: BooksService): ViewModel() {
 
     private val _bookName: MutableLiveData<String> = MutableLiveData<String>().apply { value = "" }
     private val _chapterName: MutableLiveData<String> = MutableLiveData<String>().apply { value = "" }
@@ -26,7 +25,7 @@ class BookDetailsViewModel : ViewModel() {
     val booksLoadError: LiveData<String?> = _booksLoadError
     val loading: LiveData<Boolean> = _loading
 
-    private val booksService = RetrofitFactory().getBooksService()
+
     private var job: Job? = null
     private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")

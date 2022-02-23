@@ -4,12 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.faya992.lotr.data.models.CharacterRemote
-import com.faya992.lotr.data.network.RetrofitFactory
+import com.faya992.lotr.data.services.CharactersService
 import kotlinx.coroutines.*
 
-class CharactersViewModel : ViewModel() {
+class CharactersViewModel (private val charactersService: CharactersService): ViewModel() {
 
-    private val charactersService = RetrofitFactory().getCharactersService()
     private var job: Job? = null
     private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")

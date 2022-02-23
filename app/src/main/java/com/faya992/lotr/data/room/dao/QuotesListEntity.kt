@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.faya992.lotr.data.room.dao.QuotesListEntity.Companion.TABLE_NAME
-import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = TABLE_NAME)
 data class QuotesListEntity(

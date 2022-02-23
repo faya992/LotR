@@ -11,23 +11,23 @@ import org.koin.dsl.module
 val appModule = module {
 
     viewModel<CharactersViewModel>{
-        CharactersViewModel()
+        CharactersViewModel(get())
     }
 
     viewModel<CharacterDetailsViewModel>{
-        CharacterDetailsViewModel()
+        CharacterDetailsViewModel(get())
     }
 
     viewModel<BookDetailsViewModel>{
-        BookDetailsViewModel()
+        BookDetailsViewModel(get())
     }
 
     viewModel<QuotesViewModel>{
-        QuotesViewModel(application = get())
+        QuotesViewModel(application = get(), get())
     }
 
     viewModel<MovieDetailsViewModel>{
-        MovieDetailsViewModel()
+        MovieDetailsViewModel(get())
     }
 
 

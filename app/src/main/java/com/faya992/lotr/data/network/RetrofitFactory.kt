@@ -9,31 +9,30 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitFactory {
+fun okHttpInterceptor(): HttpLoggingInterceptor {
+    val httpLoggingInterceptor = HttpLoggingInterceptor()
+    httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+    return httpLoggingInterceptor
+}
 
-    private fun okHttpInterceptor(): HttpLoggingInterceptor {
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        return httpLoggingInterceptor
-    }
-
-    private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(okHttpInterceptor())
+fun provideOkHttpClient(
+    loggingInterceptor: HttpLoggingInterceptor
+): OkHttpClient {
+    return OkHttpClient.Builder()
+        .addInterceptor(loggingInterceptor)
         .build()
+}
 
-    private val retrofitClient: Retrofit = Retrofit.Builder()
+fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    return Retrofit.Builder()
         .baseUrl("https://the-one-api.dev/v2/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-
-
-    fun getCharactersService(): CharactersService = retrofitClient.create(CharactersService::class.java)
-
-    fun getQuotesService(): QuotesService = retrofitClient.create(QuotesService::class.java)
-
-    fun getMoviesService(): MoviesService = retrofitClient.create(MoviesService::class.java)
-
-    fun getBooksService(): BooksService = retrofitClient.create(BooksService::class.java)
-
 }
+
+fun getCharactersService(retrofit: Retrofit): CharactersService = retrofit.create(CharactersService::class.java)
+fun getQuotesService(retrofit: Retrofit): QuotesService = retrofit.create(QuotesService::class.java)
+fun getMoviesService(retrofit: Retrofit): MoviesService = retrofit.create(MoviesService::class.java)
+fun getBooksService(retrofit: Retrofit): BooksService = retrofit.create(BooksService::class.java)
+

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.faya992.lotr.R
 import com.faya992.lotr.databinding.FragmentMoviesBinding
@@ -31,7 +30,6 @@ class MoviesFragment : Fragment() {
 
         return root
     }
-
 
     private fun showDetail(sender: View) {
         val movie = when (sender.tag) {

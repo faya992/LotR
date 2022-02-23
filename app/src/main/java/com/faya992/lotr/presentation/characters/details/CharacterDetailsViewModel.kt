@@ -1,21 +1,13 @@
 package com.faya992.lotr.presentation.characters.details
 
-import android.media.Image
-import android.widget.ImageView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.faya992.lotr.R
 import com.faya992.lotr.data.models.CharacterRemote
-import com.faya992.lotr.data.models.MovieRemote
-import com.faya992.lotr.data.network.RetrofitFactory
 import com.faya992.lotr.data.services.CharactersService
-import com.faya992.lotr.data.services.MoviesService
-import com.faya992.lotr.presentation.movies.details.Movies
 import kotlinx.coroutines.*
-import java.util.*
 
-class CharacterDetailsViewModel : ViewModel() {
+class CharacterDetailsViewModel (private val characterService: CharactersService): ViewModel() {
 
     private val _id: MutableLiveData<String> = MutableLiveData<String>().apply { value = "" }
     private val _race: MutableLiveData<String> = MutableLiveData<String>().apply { value = "" }
@@ -44,8 +36,6 @@ class CharacterDetailsViewModel : ViewModel() {
     val characterLoadError: LiveData<String?> = _characterLoadError
     val loading: LiveData<Boolean> = _loading
 
-
-    private val characterService = RetrofitFactory().getCharactersService()
     private var job: Job? = null
     private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")

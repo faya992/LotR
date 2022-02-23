@@ -1,9 +1,7 @@
 package com.faya992.lotr.domain.models
 
 import com.faya992.lotr.data.models.QuoteRemote
-import com.faya992.lotr.data.models.QuotesRemote
 import com.faya992.lotr.data.room.dao.QuotesListEntity
-import com.google.gson.annotations.SerializedName
 
 data class QuoteModel (
     val _id : String,

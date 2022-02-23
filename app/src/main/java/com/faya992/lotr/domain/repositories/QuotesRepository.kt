@@ -1,7 +1,6 @@
 package com.faya992.lotr.domain.repositories
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.map
 import com.faya992.lotr.data.room.DatabaseRepository
 import com.faya992.lotr.data.room.dao.QuotesListDao
 import com.faya992.lotr.data.room.dao.QuotesListEntity
