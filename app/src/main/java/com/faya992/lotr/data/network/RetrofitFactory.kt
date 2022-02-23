@@ -4,13 +4,10 @@ import com.faya992.lotr.data.services.BooksService
 import com.faya992.lotr.data.services.CharactersService
 import com.faya992.lotr.data.services.MoviesService
 import com.faya992.lotr.data.services.QuotesService
-import dagger.Module
-import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 class RetrofitFactory {
 

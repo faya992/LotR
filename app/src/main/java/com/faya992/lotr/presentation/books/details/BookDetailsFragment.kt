@@ -11,20 +11,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.faya992.lotr.databinding.FragmentBookDetailsBinding
 import com.faya992.lotr.domain.helpers.Keys
 import com.faya992.lotr.presentation.books.details.adapter.BookAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BookDetailsFragment : Fragment() {
 
     private var _binding: FragmentBookDetailsBinding? = null
     private val binding get() = _binding!!
     private val bookAdapter = BookAdapter(arrayListOf())
-    lateinit var viewModel: BookDetailsViewModel
+    private val viewModel by viewModel<BookDetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(BookDetailsViewModel::class.java)
+
         _binding = FragmentBookDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

@@ -9,19 +9,20 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.faya992.lotr.databinding.FragmentMovieDetailsBinding
 import com.faya992.lotr.domain.helpers.Keys
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieDetailsFragment : Fragment() {
 
     private var _binding: FragmentMovieDetailsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var movieDetailsViewModel: MovieDetailsViewModel
+    private val movieDetailsViewModel by viewModel<MovieDetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        movieDetailsViewModel = ViewModelProvider(this).get(MovieDetailsViewModel::class.java)
+
         _binding = FragmentMovieDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

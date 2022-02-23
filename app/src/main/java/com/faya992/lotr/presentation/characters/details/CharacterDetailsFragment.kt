@@ -18,13 +18,14 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.faya992.lotr.R
 import com.faya992.lotr.databinding.FragmentCharacterDetailsBinding
 import com.faya992.lotr.presentation.characters.Races
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 class CharacterDetailsFragment : Fragment() {
 
     private var _binding: FragmentCharacterDetailsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var characterDetailsViewModel: CharacterDetailsViewModel
+    private val characterDetailsViewModel by viewModel<CharacterDetailsViewModel>()
     private val args: CharacterDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -32,7 +33,6 @@ class CharacterDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        characterDetailsViewModel = ViewModelProvider(this).get(CharacterDetailsViewModel::class.java)
         _binding = FragmentCharacterDetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

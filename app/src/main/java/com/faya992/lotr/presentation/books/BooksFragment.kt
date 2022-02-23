@@ -20,9 +20,6 @@ class BooksFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val booksViewModel =
-            ViewModelProvider(this).get(BooksViewModel::class.java)
-
         _binding = FragmentBooksBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

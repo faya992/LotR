@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.faya992.lotr.databinding.FragmentCharactersBinding
 import com.faya992.lotr.presentation.characters.adapters.CharactersAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharactersFragment : Fragment() {
 
@@ -25,14 +26,13 @@ class CharactersFragment : Fragment() {
             arrayListOf()
         )
     }
-    lateinit var viewModel: CharactersViewModel
+    private val viewModel by viewModel<CharactersViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(CharactersViewModel::class.java)
 
         _binding = FragmentCharactersBinding.inflate(inflater, container, false)
         val root: View = binding.root

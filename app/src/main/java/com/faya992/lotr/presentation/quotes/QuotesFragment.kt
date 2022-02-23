@@ -18,9 +18,11 @@ import com.faya992.lotr.domain.models.mapToModel
 import com.faya992.lotr.domain.models.mapToRoomModel
 import com.faya992.lotr.domain.helpers.TYPE_ROOM
 import com.faya992.lotr.presentation.quotes.adapters.QuotesAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class QuotesFragment : Fragment() {
 
+    private val viewModel by viewModel<QuotesViewModel>()
     private var _binding: FragmentQuotesBinding? = null
     private val binding get() = _binding!!
     private val quotesAdapter by lazy {
@@ -36,14 +38,13 @@ class QuotesFragment : Fragment() {
             }
         }
     }
-    lateinit var viewModel: QuotesViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(QuotesViewModel::class.java)
 
         _binding = FragmentQuotesBinding.inflate(inflater, container, false)
         val root: View = binding.root

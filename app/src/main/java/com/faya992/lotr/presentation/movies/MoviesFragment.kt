@@ -22,9 +22,6 @@ class MoviesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(MoviesViewModel::class.java)
-
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
