@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_books">
+
+    <fragment
+        android:id="@+id/navigation_characters"
+        android:name="com.faya992.lotr.presentation.characters.CharactersFragment"
+        android:label="@string/title_characters"
+        tools:layout="@layout/fragment_characters">
+        <action
+            android:id="@+id/action_navigation_characters_to_navigation_character_details"
+            app:destination="@id/navigation_character_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="com.faya992.lotr.presentation.movies.MoviesFragment"
+        android:label="@string/title_movies"
+        tools:layout="@layout/fragment_movies">
+        <action
+            android:id="@+id/action_navigation_movies_to_navigation_movie_details"
+            app:destination="@id/navigation_movie_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_books"
+        android:name="com.faya992.lotr.presentation.books.BooksFragment"
+        android:label="@string/title_books"
+        tools:layout="@layout/fragment_books">
+        <action
+            android:id="@+id/action_navigation_books_to_bookDetailsFragment"
+            app:destination="@id/navigation_book_details"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_book_details"
+        android:name="com.faya992.lotr.presentation.books.details.BookDetailsFragment"
+        android:label="Book Details"
+        tools:layout="@layout/fragment_book_details">
+        <argument
+            android:name="Book"
+            android:defaultValue="BookOne"
+            app:argType="com.faya992.lotr.presentation.books.details.Books" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_character_details"
+        android:name="com.faya992.lotr.presentation.characters.details.CharacterDetailsFragment"
+        android:label="Character Details"
+        tools:layout="@layout/fragment_character_details" >
+
+        <argument
+            android:name="characterId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_character_details_to_navigation_characters2"
+            app:destination="@id/navigation_characters" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movie_details"
+        android:name="com.faya992.lotr.presentation.movies.details.MovieDetailsFragment"
+        android:label="Movie Details"
+        tools:layout="@layout/fragment_movie_details">
+        <argument
+            android:name="Movie"
+            android:defaultValue="MovieOne"
+            app:argType="com.faya992.lotr.presentation.movies.details.Movies" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_quotes"
+        android:name="com.faya992.lotr.presentation.quotes.QuotesFragment"
+        android:label="@string/title_quotes"
+        tools:layout="@layout/fragment_quotes">
+        <action
+            android:id="@+id/action_quotesFragment_to_quoteDetailsFragment"
+            app:destination="@id/navigation_quote_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_quote_details"
+        android:name="com.faya992.lotr.presentation.quotes.details.QuoteDetailsFragment"
+        android:label="Quote Details"
+        tools:layout="@layout/fragment_quote_details"/>
+
+
+</navigation>

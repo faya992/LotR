@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">LotR</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="name">Name</string>
+    <string name="search_character">⌕ Name, race, gender</string>
+    <string name="nothing_found">Nothing found</string>
+    <string name="writer">John Ronald Reuel Tolkien</string>
+    <string name="chapters">Chapters</string>
+    <string name="book_one">The Fellowship of the Ring</string>
+    <string name="book_two">The Two Towers</string>
+    <string name="book_three">The Return of the King</string>
+    <string name="chapter">Chapter [chapter_number] -</string>
+    <string name="chapter_number">1</string>
+    <string name="lotr">The Lord of the Rings</string>
+    <string name="see_more">See more</string>
+    <string name="quotes">Quotes</string>
+    <string name="release_date">Release date:</string>
+    <string name="runtime_in_minutes">Runtime in minutes:</string>
+    <string name="budget_in_millions">Budget in millions:</string>
+    <string name="gross">Gross worldwide in millions:</string>
+    <string name="academy_award_nominations">Academy award nominations:</string>
+    <string name="academy_award_wins">Academy award wins:</string>
+    <string name="movie">Movie</string>
+    <string name="learn_more">Learn more</string>
+    <string name="race">Race:</string>
+    <string name="gender">Gender:</string>
+    <string name="hair">Hair:</string>
+    <string name="realm">Realm:</string>
+    <string name="birth">Birth:</string>
+    <string name="death">Death:</string>
+    <string name="spouse">Spouse:</string>
+    <string name="title_characters">Characters</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_books">Books</string>
+    <string name="title_quotes">Quotes</string>
+    <string name="click">Click</string>
+    <string name="long_click">Long Click</string>
+    <string name="human">Human</string>
+    <string name="dwarf">Dwarf</string>
+    <string name="hobbit">Hobbit</string>
+    <string name="elf">Elf</string>
+
+</resources>

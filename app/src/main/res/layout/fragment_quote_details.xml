@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+
+
+    <TextView
+        android:id="@+id/textViewQuoteDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/sf_pro_display_regular"
+        tools:text="Deagol my love"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewNotSelected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCharacter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf_pro_display_regular"
+        tools:text="-Gollum"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sub_title_size"
+        app:layout_constraintEnd_toEndOf="@+id/textViewQuote"
+        app:layout_constraintStart_toStartOf="@+id/textViewQuote"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuote" />
+
+    <ImageView
+        android:id="@+id/imageViewNotSelected"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:srcCompat="@drawable/ic_favorite_border"
+        app:tint="@color/links" />
+
+    <ImageView
+        android:id="@+id/imageViewSelected"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewNotSelected"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewNotSelected"
+        app:layout_constraintStart_toStartOf="@+id/imageViewNotSelected"
+        app:srcCompat="@drawable/ic_favorite_baseline"
+        app:tint="@color/links" />
+
+    <ImageView
+        android:id="@+id/imageViewMovie"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:foregroundGravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewNotSelected"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/imageViewNotSelected"
+        app:srcCompat="@drawable/ic_movie"
+        app:tint="@color/links" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/textViewMovieNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal|center_vertical"
+        tools:text="3"
+        android:layout_marginStart="18dp"
+        android:textAlignment="center"
+        android:textColor="@color/links"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewMovie"
+        app:layout_constraintStart_toStartOf="@+id/imageViewMovie"
+        app:layout_constraintTop_toTopOf="@id/imageViewMovie" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

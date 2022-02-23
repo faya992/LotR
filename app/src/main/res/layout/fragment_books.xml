@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewOne"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        app:cardCornerRadius="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/book_one"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_book_1" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textViewBookOne"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cardViewOne"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/book_one" />
+
+                    <TextView
+                        android:id="@+id/textViewWriterOne"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sub_title_size"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewBookOne"
+                        app:layout_constraintStart_toStartOf="@+id/textViewBookOne"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewBookOne"
+                        android:text="@string/writer" />
+
+                    <Button
+                        android:id="@+id/buttonOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/chapters"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/list_size"
+                        app:cornerRadius="14dp"
+                        app:iconPadding="0dp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/links"
+                        app:strokeColor="@color/links"
+                        app:strokeWidth="1dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewWriterOne"
+ />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewTwo"
+                        app:cardCornerRadius="16dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_book_2"
+                            android:contentDescription="@string/book_two" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textViewBookTwo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cardViewTwo"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/book_two" />
+
+                    <TextView
+                        android:id="@+id/textViewWriterTwo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sub_title_size"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewBookTwo"
+                        app:layout_constraintStart_toStartOf="@+id/textViewBookTwo"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewBookTwo"
+                        android:text="@string/writer" />
+
+                    <Button
+                        android:id="@+id/buttonTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/links"
+                        app:strokeColor="@color/links"
+                        app:strokeWidth="1dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/chapters"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/list_size"
+                        app:cornerRadius="14dp"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewWriterTwo" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewThree"
+                        app:cardCornerRadius="16dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_book_3"
+                            android:contentDescription="@string/book_three" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/textViewBookThree"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_size"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cardViewThree"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/book_three" />
+
+                    <TextView
+                        android:id="@+id/textViewWriterThree"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/sub_title_size"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewBookThree"
+                        app:layout_constraintStart_toStartOf="@+id/textViewBookThree"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewBookThree"
+                        android:text="@string/writer" />
+
+                    <Button
+                        android:id="@+id/buttonThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/links"
+                        app:strokeColor="@color/links"
+                        app:strokeWidth="1dp"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/chapters"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/list_size"
+                        app:cornerRadius="14dp"
+                        app:iconPadding="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewWriterThree" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+/*    versionCatalogs {
+        alias('navigation-safe-args-gradle-plugin').to('androidx.navigation', 'navigation-safe-args-gradle-plugin').versionRef('2.3.5')
+    }*/
+}
+rootProject.name = "LotR"
+include ':app'
+
+
+//    id 'androidx.navigation:navigation-safe-args-gradle-plugin' version '2.3.5'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
